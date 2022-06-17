@@ -1,6 +1,6 @@
 import './Nav.css';
 
-const Nav = () => {
+const NavBar = () => {
     return (
         <nav className="nav">
             <ul className="nav-list">
@@ -24,4 +24,4 @@ const Nav = () => {
     );
 }
 
-export default Nav;
+export default NavBar;
