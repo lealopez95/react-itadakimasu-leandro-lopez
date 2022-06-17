@@ -1,6 +1,24 @@
+@font-face {
+	font-family: "Kaushan";
+	src: url("./fonts/KaushanScript-Regular.otf") format("opentype");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Vegur-light";
+	src: url("./fonts/Vegur-Light.otf") format("opentype");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Vegur-regular";
+	src: url("./fonts/Vegur-Regular.otf") format("opentype");
+	font-display: swap;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Kaushan', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -11,3 +29,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+a:hover {
+  color: #ff8f1f;
+}
+
