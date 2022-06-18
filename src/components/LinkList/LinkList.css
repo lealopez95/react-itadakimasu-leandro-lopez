@@ -1,0 +1,38 @@
+.link-list {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.link-list-item {
+    transform: scale(1);
+	transition: transform 0.2s;
+}
+
+.link-list-item:hover {
+	transform: scale(1.2);
+	transition: transform 0.2s;	
+}
+
+.link-list-item-link {
+    color: #931621;
+    padding: 0 15px;
+}
+
+.link-list-item-link:hover {
+    color: #ff8f1f;
+}
+
+.link-list-item-link.active {
+    border: #000000 1px solid;
+    border-radius: 100%;
+    background-color: #931621;
+    color: #ffffff;
+}
+
+.link-list-item-link.active:hover {
+    color: #ffffff;
+}

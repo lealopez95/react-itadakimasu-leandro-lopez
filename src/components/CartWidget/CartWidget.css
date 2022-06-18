@@ -1,0 +1,14 @@
+.cart-wrapper {
+    margin-right: 2rem;
+    display: flex;
+}
+
+.cart-button {
+    background-color: transparent;
+    border: none;
+}
+
+.cart-wrapper img {
+    width: 30px;
+    height: 30px;
+}
