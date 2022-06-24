@@ -1,3 +1,4 @@
+import React from "react";
 import basket from '../../img/shopping-basket.svg';
 import './CartWidget.css';
 

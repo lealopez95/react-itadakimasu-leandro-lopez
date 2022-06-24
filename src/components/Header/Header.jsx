@@ -1,3 +1,4 @@
+import React from "react";
 import logo from '../../img/logos/logo_1.png';
 import NavBar from '../Nav/NavBar';
 import './Header.css';
@@ -26,7 +27,6 @@ const mainMenuPages = [
         url: '/online-order'
     }
 ];
-
 
 const Header = () => (
     <header className="header">

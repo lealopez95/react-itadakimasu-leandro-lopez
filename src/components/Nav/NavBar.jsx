@@ -1,3 +1,4 @@
+import React from "react";
 import LinkList from '../LinkList/LinkList';
 import './Nav.css';
 
