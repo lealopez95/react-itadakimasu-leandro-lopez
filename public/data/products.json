@@ -1,0 +1,186 @@
+[
+    {
+        "id": 1,
+        "name": "Oniguiri",
+        "price": 50,
+        "description": "Triángulos de arroz rellenos x 2 u.",
+        "image": "media/images/food/oniguiri.webp",
+        "categoryId": 1
+    },
+    {
+        "id": 2,
+        "name": "Tempura",
+        "price": 75,
+        "description": "Fritura de mariscos, kani-kama o vegetales rebozados en harina",
+        "image": "media/images/food/tempura-de-camarones1.webp",
+        "categoryId": 1
+    },
+    {
+        "id": 3,
+        "name": "Gyōza",
+        "price": 25,
+        "description": "Empanada japonesa rellena de cerdo o verdura con salsa de soja y ajo x 5 u.",
+        "image": "media/images/food/Gyoza.webp",
+        "categoryId": 1
+    },
+    {
+        "id": 4,
+        "name": "Tonkotsu Ramen",
+        "price": 100,
+        "description": "Sopa de Fideos, cerdo chashu en trozos, huevos, palillos, caja de cartón, botella de salsa de soja.",
+        "image": "media/images/food/tonkotsu_ramen.webp",
+        "categoryId": 2
+    },
+    {
+        "id": 5,
+        "name": "Sapporo Ramen",
+        "price": 100,
+        "description": "Fideos gruesos, caldo de cerdo, pollo o pescado y miso rojo acompañado con chasu, huevos pasado por agua, carne de cerdo picada, col, jengibre y maíz dulce",
+        "image": "media/images/food/sapporo_ramen.webp",
+        "categoryId": 2
+    },
+    {
+        "id": 6,
+        "name": "Tsukemen Ramen",
+        "price": 100,
+        "description": "Se sirve en dos bol distintos: en uno los fideos ligeramente fríos y en un otro el caldo. Los fideos se van sumergiendo poco a poco en el caldo y comiendo acompañado de los aderezos y demás ingredientes.",
+        "image": "media/images/food/tsukemen_ramen.webp",
+        "categoryId": 2
+    },
+    {
+        "id": 7,
+        "name": "Okonomiyaki",
+        "price": 100,
+        "description": "Tortilla hecha con una masa de harina con repollo, papas, puerros, alga nori, cebolla de verdeo, bacon, langostinos y salsa okonomiyaki",
+        "image": "media/images/food/okonomiyaki.webp",
+        "categoryId": 2
+    },
+    {
+        "id": 8,
+        "name": "Yakisoba",
+        "price": 100,
+        "description": "Fideos soba fritos con mariscos y verduras",
+        "image": "media/images/food/yakisoba-con-salm195179n.webp",
+        "categoryId": 2
+    },
+    {
+        "id": 9,
+        "name": "Tonkatsu",
+        "price": 100,
+        "description": "Chueta de cerdo rebosada en Panko frita",
+        "image": "media/images/food/tonkatsu.webp",
+        "categoryId": 2
+    },
+    {
+        "id": 10,
+        "name": "Katsudon",
+        "price": 100,
+        "description": "Milanesa de cerdo con huevo y cebolla cocidos en caldo dashi sobre arroz japonés",
+        "image": "media/images/food/katsudon.webp",
+        "categoryId": 2
+    },
+    {
+        "id": 11,
+        "name": "Maki",
+        "price": 100,
+        "description": "Piezas de arroz con salm&oacute;n o At&uacute;n, palta y queso philadephia enrollados en alga nori x 6 u.",
+        "image": "media/images/food/maki-sushi-.webp",
+        "categoryId": 3
+    },
+    {
+        "id": 12,
+        "name": "Niguiri",
+        "price": 100,
+        "description": "Piezas de arroz cubiertas con una lonja de salm&oacute;n, at&uacute;n rojo, pulpo o langostino x 6 u.",
+        "image": "media/images/food/nigiri.webp",
+        "categoryId": 3
+    },
+    {
+        "id": 13,
+        "name": "Sashimi",
+        "price": 100,
+        "description": "Lonjas de Salmón cortadas finamente x 6 u.",
+        "image": "media/images/food/sashimi.webp",
+        "categoryId": 3
+    },
+    {
+        "id": 14,
+        "name": "Dorayaki",
+        "price": 100,
+        "description": "Tortita redonda rellena con una pasta dulce de judías rojas (azuki) x 2 u.",
+        "image": "media/images/food/dorayaki.webp",
+        "categoryId": 4
+    },
+    {
+        "id": 15,
+        "name": "Mitarashi Dango",
+        "price": 100,
+        "description": "Brochetas de bambú con 3 bolas de masa dulce de harina de arroz x 2 u.",
+        "image": "media/images/food/mitarashi_dango.webp",
+        "categoryId": 4
+    },
+    {
+        "id": 16,
+        "name": "Hanami dango",
+        "price": 100,
+        "description": "3 bolas de masa dulce de harina de arroz de color verde pálido, blanco y rosa.",
+        "image": "media/images/food/hanami-dango.webp",
+        "categoryId": 4
+    },
+    {
+        "id": 17,
+        "name": "Ichigo Shortcake",
+        "price": 100,
+        "description": "Mini torta de fresas con crema.",
+        "image": "media/images/food/ichigo_shorcake.webp",
+        "categoryId": 4
+    },
+    {
+        "id": 18,
+        "name": "Purin",
+        "price": 100,
+        "description": "Delicioso pudin con fresa y chocolate. Se sirve bien frio.",
+        "image": "media/images/food/Purin.webp",
+        "categoryId": 4
+    },
+    {
+        "id": 19,
+        "name": "Sake",
+        "price": 100,
+        "description": "Alcohol en base a arroz lleva levadura blanca y agua",
+        "image": "media/images/food/sake.webp",
+        "categoryId": 5
+    },
+    {
+        "id": 20,
+        "name": "Sake junmai",
+        "price": 100,
+        "description": "El único ingrediente necesario para elaborar esta bebida típica de Japón es el arroz.",
+        "image": "media/images/food/sake-junmai.webp",
+        "categoryId": 5
+    },
+    {
+        "id": 21,
+        "name": "Ramune",
+        "price": 100,
+        "description": "Bebida dulce y refrescante",
+        "image": "media/images/food/Ramune.webp",
+        "categoryId": 5
+    },
+    {
+        "id": 22,
+        "name": "Té",
+        "price": 100,
+        "description": "Té verde o té oolong embotellado.",
+        "image": "media/images/food/tea.webp",
+        "categoryId": 5
+    },
+    {
+        "id": 23,
+        "name": "Agua",
+        "price": 100,
+        "description": "Botella de 600ml",
+        "image": "media/images/food/agua.webp",
+        "categoryId": 5
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Entradas"
+    },
+    {
+        "id": 2,
+        "name": "Platos principales"
+    },
+    {
+        "id": 3,
+        "name": "Sushi"
+    },
+    {
+        "id": 4,
+        "name": "Postres"
+    },
+    {
+        "id": 5,
+        "name": "Bebidas"
+    }
+]

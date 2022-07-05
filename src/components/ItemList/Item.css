@@ -1,0 +1,7 @@
+.Item-box {
+    width: calc(90% / 3);
+}
+
+.Item-box .Item-image {
+    width: 275px;
+}
