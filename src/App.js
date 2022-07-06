@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './components/Header/Header';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 
 //just for now, declared here
@@ -30,6 +31,7 @@ function App() {
     <div className="App">
       <Header />
       <ItemListContainer items={products} />
+      <ItemDetailContainer />
     </div>
   );
 }
