@@ -1,8 +1,9 @@
-import React from "react";
-import logo from '../../img/logos/logo_1.png';
-import NavBar from '../Nav/NavBar';
+import React from 'react';
 import './Header.css';
 import CartWidget from '../CartWidget/CartWidget';
+import logoSrc from '../../img/logos/logo_1.png';
+import Logo from '../Logo/Logo';
+import NavBar from '../NavBar/NavBar';
 
 const mainMenuPages = [
     {
@@ -11,28 +12,19 @@ const mainMenuPages = [
         active: true
     },
     {
-        title: 'Contacto',
-        url: '/contact'
-    },
-    {
-        title: 'Menú',
-        url: '/menu'
-    },
-    {
-        title: 'Reservar',
-        url: '/reservations'
-    },
-    {
-        title: 'Pedir Online',
-        url: '/online-order'
+        title: 'Menu',
+        url: '/category/'
     }
 ];
 
 const Header = () => (
-    <header className="header">
-        <a href="/" className="header-logo">
-            <img src={logo} alt="Logo Itadakimasu!" />
-        </a>
+    <header className='header'>
+        <Logo 
+            shouldLink={true}
+            logoSrc={logoSrc}
+            altLogo={`Logo Itadakimasu!`}
+            containerClassName={'header-logo'}
+        />
         <NavBar pagesList={mainMenuPages} />
         <CartWidget />
     </header>

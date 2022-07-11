@@ -1,6 +1,7 @@
 .itemListContainer {
     display: flex;
+    flex-direction: column;
     min-height: calc(100vh - 138px) ;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }

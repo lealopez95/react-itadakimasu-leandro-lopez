@@ -1,38 +1,33 @@
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-
-
-//just for now, declared here
-const products = [
-  {
-    id: 1,
-    name: 'product 1',
-    price: 10,
-    stock: 10, 
-  },
-  {
-    id: 2,
-    name: 'product 2',
-    price: 20,
-    stock: 5, 
-  },
-  {
-    id: 3,
-    name: 'product 3',
-    price: 30,
-    stock: 2, 
-  },
-]
+import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <ItemListContainer items={products} />
-      <ItemDetailContainer />
-    </div>
+    <BrowserRouter>
+      <div className='App'>
+        <Header />
+        <Routes>
+          <Route exact path='/' /> {/* here will go a Home component */}
+          {/* <Route exact path='/contact' component={<ContactContainer />} />
+          <Route exact path='/cart' component={<CartContainer />} /> */}
+          <Route path='category' element={<ItemListContainer />} >
+            <Route path=':categoryName' element={<ItemListContainer />} />
+          </Route>
+          <Route path='item/:itemId' element={<ItemDetailContainer />} />
+          <Route
+            path="*"
+            element={
+              <main style={{ padding: "1rem" }}>
+                <p>404 Esta pagina no existe!</p>
+              </main>
+            }
+          />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

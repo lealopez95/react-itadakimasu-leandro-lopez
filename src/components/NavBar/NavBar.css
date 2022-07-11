@@ -1,3 +1,7 @@
+.nav {
+    font-size: 1.3rem;
+}
+
 .link-list {
     display: flex;
     justify-content: center;

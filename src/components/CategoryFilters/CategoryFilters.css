@@ -1,0 +1,9 @@
+.filter-wrapper {
+    width: 50%;
+}
+
+.filter-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
