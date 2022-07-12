@@ -4,12 +4,13 @@ import './Item.css';
 
 const Item = ({ item }) => {
     return (
-        <li className="Item-box">
-            <img className="Item-image" src={item.image} alt={item.name} />
-            <h3 className="Item-title">{item.name}</h3>
-            <p className="Item-text">{item.description}</p>
-            <p className="Item-text">${item.price}</p>
-            <Link to={`/item/${item.id}`}>Ver detalles</Link>
+        <li className="Item-card-wrapper">
+            <div className="Item-card">
+                <img className="Item-image"src={item.image} alt={item.title} />
+                <h3 className="Item-title">{item.title}</h3>
+                <p className="Item-text">${item.price}</p>
+                <Link to={`/item/${item.id}`}>View Details</Link>
+            </div>
         </li>
     )
 };

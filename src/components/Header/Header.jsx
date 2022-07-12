@@ -5,19 +5,7 @@ import logoSrc from '../../img/logos/logo_1.png';
 import Logo from '../Logo/Logo';
 import NavBar from '../NavBar/NavBar';
 
-const mainMenuPages = [
-    {
-        title: 'Inicio',
-        url: '/',
-        active: true
-    },
-    {
-        title: 'Menu',
-        url: '/category/'
-    }
-];
-
-const Header = () => (
+const Header = ({pages}) => (
     <header className='header'>
         <Logo 
             shouldLink={true}
@@ -25,7 +13,7 @@ const Header = () => (
             altLogo={`Logo Itadakimasu!`}
             containerClassName={'header-logo'}
         />
-        <NavBar pagesList={mainMenuPages} />
+        <NavBar pagesList={pages} />
         <CartWidget />
     </header>
 );

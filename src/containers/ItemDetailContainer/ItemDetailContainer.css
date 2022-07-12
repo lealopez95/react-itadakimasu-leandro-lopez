@@ -1,0 +1,12 @@
+.ItemDetailContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Item-Detail {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

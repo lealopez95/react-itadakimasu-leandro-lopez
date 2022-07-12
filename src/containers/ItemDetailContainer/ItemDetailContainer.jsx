@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './ItemDetailContainer.css';
-import SyncLoader from "react-spinners/SyncLoader";
-import ItemDetail from './ItemDetail';
+import ItemDetailView from '../../views/ItemDetailView/ItemDetailView';
+import SyncLoader from 'react-spinners/SyncLoader';
 
 const ItemDetailContainer = () => {
 
@@ -11,37 +11,31 @@ const ItemDetailContainer = () => {
     const [ isLoading, setIsLoading ] = useState(true);
 
     const getItem = () => {
-        console.log("ItemDetailContainer")
-        setTimeout(async () => {
-            const productResponse = await fetch(
-                '/data/products.json',
-                {
-                    headers : { 
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    }
-                }
-            );
-            if(productResponse.status === 200) {
-                const product = await productResponse.json();
-                setItem(product.find(item => parseInt(item.id) === parseInt(itemId)));
-                setIsLoading(false);
+        fetch(`https://fakestoreapi.com/products/${itemId}`, {
+            headers : { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             }
-        }, 2000);
+        })
+            .then(response => response.json())
+            .then(product => {
+                setItem(product)
+                setIsLoading(false);
+            });
     }
 
     useEffect(getItem, [ itemId ]);
     
     return (
-        <div className="ItemDetailContainer">
+        <div className='ItemDetailContainer'>
             <SyncLoader 
-                color={"#fd644c"}
+                color={'#fd644c'}
                 loading={isLoading}
                 margin={5}
             />
             {
                 !isLoading
-                && <ItemDetail item={item} />
+                && <ItemDetailView item={item} />
             }
             
         </div>
