@@ -6,6 +6,7 @@ import SyncLoader from 'react-spinners/SyncLoader';
 
 const ItemDetailContainer = () => {
 
+    const stock = 5; // hardcode stock 'cause it does not come from the test API
     const { itemId } = useParams();
     const [ item, setItem ] = useState([]);
     const [ isLoading, setIsLoading ] = useState(true);
@@ -35,7 +36,7 @@ const ItemDetailContainer = () => {
             />
             {
                 !isLoading
-                && <ItemDetailView item={item} />
+                && <ItemDetailView item={item} stock={stock} />
             }
             
         </div>

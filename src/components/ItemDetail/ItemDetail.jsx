@@ -1,7 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css';
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({item, stock, initial = 1}) => {
+    const [ shouldGoToCart, setShouldGoToCart ] = useState(false);
+    const [ amount, setAmount ] = useState(1);
+    const [ errorMsg, setErrorMsg ] = useState('');
+
+    const errorMsgHandler = (msg, timeout = 3000) => {
+        setErrorMsg(msg);
+        setTimeout(() => {
+            setErrorMsg('');
+        }, timeout);
+    }
+
+    const onAddHandler = () => {
+        if(amount < stock) {
+            setAmount(amount+1);
+        } else{
+            errorMsgHandler(`Could not add to cart, reached out the max stock for ${item.title}`)
+        }
+    }
+
+    const onSubstractHandler = () => {
+        if(amount > initial) {
+            setAmount(amount-1);
+        } else{
+            errorMsgHandler(`The mimimun amount of "${item.title}" is ${initial}`);
+        }
+    }
+
+    const onAddToCart = () => {
+        setShouldGoToCart(true);
+    }
+
+    const renderActionButton = () => {
+        if (shouldGoToCart) {
+            return <Link to={`/cart`}>Proceed to checkout</Link>;
+        }
+        return <button onClick={onAddToCart}>Add to cart</button>
+    }
+
+
     return <>
         <div className="Item-Detail-wrapper">
             <div className='Img-wrapper'>
@@ -11,6 +52,16 @@ const ItemDetail = ({item}) => {
                 <h3 className="Item-title">{item.title}</h3>
                 <p className="Item-text">Description: {item.description}</p>
                 <p className="Item-text">Price: ${item.price}</p>
+                {!shouldGoToCart 
+                    && <ItemCount 
+                        onAdd={onAddHandler}
+                        onSubstract={onSubstractHandler}
+                        count={amount}
+                         />
+                }
+                { !!errorMsg && <span>{errorMsg}</span> }
+                {renderActionButton()}
+                
             </div>
         </div>
     </>
