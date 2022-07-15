@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css';
+import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = ({item, stock, initial = 1}) => {
+    const { addItemToCart } = useContext(CartContext);
     const [ shouldGoToCart, setShouldGoToCart ] = useState(false);
     const [ amount, setAmount ] = useState(1);
     const [ errorMsg, setErrorMsg ] = useState('');
@@ -32,6 +34,7 @@ const ItemDetail = ({item, stock, initial = 1}) => {
     }
 
     const onAddToCart = () => {
+        addItemToCart(item, amount);
         setShouldGoToCart(true);
     }
 
