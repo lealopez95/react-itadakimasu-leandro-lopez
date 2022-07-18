@@ -16,6 +16,10 @@
     justify-content: space-between;
 }
 
+.Item-card.Item-card--list {
+    flex-direction: row;
+}
+
 .Item-card .Item-image {
     max-width: 100%;
     max-height: 200px;

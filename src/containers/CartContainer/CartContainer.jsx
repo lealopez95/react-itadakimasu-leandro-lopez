@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext }  from 'react';
+import CartView from '../../views/CartView/CartView';
+import { CartContext } from '../../context/CartContext';
+
 
 const CartContainer = () => {
+    const { cart, removeItemFromCart } = useContext(CartContext);
     return <>
-        <p>This is the Cart page</p>
+        <CartView items={cart} onDeleteItem={removeItemFromCart} />
     </>
 }
 

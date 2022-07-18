@@ -12,7 +12,7 @@ const ItemListContainer = () => {
     useEffect(() => {
         setIsLoading(true);
         let url = 'https://fakestoreapi.com/products/';
-        if ( categoryName!== 'all') {
+        if (categoryName) {
             url += `category/${categoryName}`;
         }
         fetch(url, {

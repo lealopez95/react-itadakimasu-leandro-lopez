@@ -13,7 +13,7 @@ function App() {
         <CartProvider defaultValue={[]}>
           <HeaderContainer />
           <Routes>
-            <Route exact path='/' /> {/* here will go a Home component */}
+            <Route exact path='/' element={<ItemListContainer />} /> {/* here will go a Home component */}
             <Route exact path='category/:categoryName' element={<ItemListContainer />} />
             <Route exact path='item/:itemId' element={<ItemDetailContainer />} />
             <Route exact path='cart' element={<CartContainer />} />

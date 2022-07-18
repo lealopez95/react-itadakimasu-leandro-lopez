@@ -1,0 +1,35 @@
+.Cart-Item-card-wrapper {
+    flex: 0 1 25%;
+    display: flex;
+    justify-content: center;
+}
+
+.Cart-Item-card {
+    width: 75%;
+    background-color: #dddddd;
+    border: 1px solid black;
+    padding: 2rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Cart-Item-button {
+    background: none;
+    border: none;
+}
+
+.Cart-Item-button:hover {
+    cursor: pointer;
+}
+
+.Cart-Item-card.Cart-Item-card--list {
+    flex-direction: row;
+}
+
+.Cart-Item-card .Cart-Item-image {
+    max-width: 100%;
+    max-height: 200px;
+}

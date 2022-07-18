@@ -24,6 +24,8 @@
 .link-list-item-link {
     color: #ffffff;
     padding: 0 15px;
+    text-transform: uppercase;
+    font-weight: normal;
 }
 
 .link-list-item-link:hover {
