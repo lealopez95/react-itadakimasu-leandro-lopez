@@ -7,7 +7,7 @@
     justify-content: space-between;
     align-items: center;
     background: rgb(0,0,142);
-    background: linear-gradient(0deg, rgba(0,0,142,1) 0%, rgba(0,212,255,1) 50%, rgba(0,0,142,1) 100%);
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(124, 124, 124) 50%, rgb(0, 0, 0) 100%);
     border-bottom: 2px solid #000000;
 }
 

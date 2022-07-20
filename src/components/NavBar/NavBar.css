@@ -29,16 +29,16 @@
 }
 
 .link-list-item-link:hover {
-    color: #041057;
+    color: #000000;
 }
 
 .link-list-item-link.active {
-    border: #000000 1px solid;
-    border-radius: 100%;
-    background-color: #ffffff;
-    color: #041057;
+    font-weight: bold;
+    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid #ffffff;
+    color: #ffffff;
 }
 
 .link-list-item-link.active:hover {
-    color: #041057;
+    color: #000000;
 }
