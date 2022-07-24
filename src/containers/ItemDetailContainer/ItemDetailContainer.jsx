@@ -3,26 +3,27 @@ import { useParams } from 'react-router-dom';
 import './ItemDetailContainer.css';
 import ItemDetailView from '../../views/ItemDetailView/ItemDetailView';
 import SyncLoader from 'react-spinners/SyncLoader';
+import { getFirestore, getDoc, doc } from 'firebase/firestore';
+
 
 const ItemDetailContainer = () => {
 
-    const stock = 5; // hardcode stock 'cause it does not come from the test API
     const { itemId } = useParams();
     const [ item, setItem ] = useState([]);
     const [ isLoading, setIsLoading ] = useState(true);
 
     const getItem = () => {
-        fetch(`https://fakestoreapi.com/products/${itemId}`, {
-            headers : { 
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-            .then(response => response.json())
-            .then(product => {
-                setItem(product)
+        const db = getFirestore();
+        const productRef = doc(db, 'products', itemId);
+        getDoc(productRef).then( snapshot => {
+            if(snapshot.exists()) {
+                setItem({
+                    id: snapshot.id,
+                    ...snapshot.data()
+                });
                 setIsLoading(false);
-            });
+            }
+        });
     }
 
     useEffect(getItem, [ itemId ]);
@@ -36,7 +37,7 @@ const ItemDetailContainer = () => {
             />
             {
                 !isLoading
-                && <ItemDetailView item={item} stock={stock} />
+                && <ItemDetailView item={item} />
             }
             
         </div>

@@ -3,29 +3,33 @@ import { useParams } from 'react-router-dom';
 import './ItemListContainer.css';
 import ItemList from "../../components/ItemList/ItemList";
 import SyncLoader from "react-spinners/SyncLoader"
+import { getFirestore, getDocs, collection, query, where } from 'firebase/firestore';
+
 
 const ItemListContainer = () => {
     const { categoryName } = useParams();
     const [ items, setItems ] = useState([]);
     const [ isLoading, setIsLoading ] = useState(true);
-
+    
     useEffect(() => {
         setIsLoading(true);
-        let url = 'https://fakestoreapi.com/products/';
+        const db = getFirestore();
+        let itemsCollection = collection(db, 'products');
         if (categoryName) {
-            url += `category/${categoryName}`;
+            itemsCollection = query(itemsCollection, where("category", "==", categoryName));
         }
-        fetch(url, {
-            headers : { 
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
+        getDocs(itemsCollection).then( snapshot => {
+            let products = [];
+            if(snapshot.size > 0) {
+                products = snapshot.docs.map( doc => ({
+                        id: doc.id,
+                        ...doc.data()
+                    })
+                );
             }
-        })
-            .then(response => response.json())
-            .then(products => {
-                setItems(products)
-                setIsLoading(false);
-            });
+            setItems(products);
+            setIsLoading(false);
+        });
     }, [ categoryName ]);
     
     return (

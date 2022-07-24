@@ -3,7 +3,6 @@ import './NavBar.css';
 import { NavLink } from 'react-router-dom';
 
 const NavBar = ( { pagesList } ) => {
-    console.log("pagesList", pagesList)
     return (
         <nav className='nav'>
             <ul className='link-list'>

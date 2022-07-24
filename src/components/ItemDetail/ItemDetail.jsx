@@ -4,7 +4,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css';
 import { CartContext } from '../../context/CartContext';
 
-const ItemDetail = ({item, stock, initial = 1}) => {
+const ItemDetail = ({item, initial = 1}) => {
     const { addItemToCart } = useContext(CartContext);
     const [ shouldGoToCart, setShouldGoToCart ] = useState(false);
     const [ amount, setAmount ] = useState(1);
@@ -18,7 +18,7 @@ const ItemDetail = ({item, stock, initial = 1}) => {
     }
 
     const onAddHandler = () => {
-        if(amount < stock) {
+        if(amount < item.stock) {
             setAmount(amount+1);
         } else{
             errorMsgHandler(`Could not add to cart, reached out the max stock for ${item.title}`)

@@ -2,7 +2,7 @@ import React from 'react';
 import BreadCrumbs from '../../components/BreadCrumbs/BreadCrumbs';
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
 
-const ItemDetailView = ({ item, stock }) => {
+const ItemDetailView = ({ item }) => {
 
     const getBreadcrumbs = () => {
         return [{
@@ -14,7 +14,7 @@ const ItemDetailView = ({ item, stock }) => {
     return (
         <>
         <BreadCrumbs breadcrumbsList={getBreadcrumbs()} />
-        <ItemDetail item={item} stock={stock} />
+        <ItemDetail item={item} />
         </>
     )
 }
