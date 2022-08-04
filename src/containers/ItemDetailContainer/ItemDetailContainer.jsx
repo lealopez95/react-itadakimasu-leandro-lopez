@@ -3,7 +3,9 @@ import { useParams } from 'react-router-dom';
 import './ItemDetailContainer.css';
 import ItemDetailView from '../../views/ItemDetailView/ItemDetailView';
 import SyncLoader from 'react-spinners/SyncLoader';
-import { getFirestore, getDoc, doc } from 'firebase/firestore';
+import { getDoc, doc } from 'firebase/firestore';
+import { db } from "../../firebase/firebase";
+
 
 
 const ItemDetailContainer = () => {
@@ -13,7 +15,6 @@ const ItemDetailContainer = () => {
     const [ isLoading, setIsLoading ] = useState(true);
 
     const getItem = () => {
-        const db = getFirestore();
         const productRef = doc(db, 'products', itemId);
         getDoc(productRef).then( snapshot => {
             if(snapshot.exists()) {

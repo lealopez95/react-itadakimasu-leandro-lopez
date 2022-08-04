@@ -17,10 +17,13 @@ const CartItem = ({item, showAsList = false, onDeleteItem}) => {
                 <img className='Cart-Item-image'src={item.image} alt={item.title} />
                 <h3 className='Cart-Item-title'>{item.title}</h3>
                 <p className='Cart-Item-text'>${item.price}</p>
-                <button className='Cart-Item-button' onClick={onDeleteHandler}><FontAwesomeIcon 
-                    icon={faTrashCan}
-                    color='black'
-                    size='2x' /></button>
+                <p className='Cart-Item-text'>x {item.qty}</p>
+                <button className='Cart-Item-button' onClick={onDeleteHandler}>
+                    <FontAwesomeIcon 
+                        icon={faTrashCan}
+                        color='black'
+                        size='2x' />
+                </button>
                 <Link to={`/item/${item.id}`}>View Details</Link>
             </div>
         </li>

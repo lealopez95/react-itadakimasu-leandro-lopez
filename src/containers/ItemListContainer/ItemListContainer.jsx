@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom';
 import './ItemListContainer.css';
 import ItemList from "../../components/ItemList/ItemList";
 import SyncLoader from "react-spinners/SyncLoader"
-import { getFirestore, getDocs, collection, query, where } from 'firebase/firestore';
+import { getDocs, collection, query, where } from 'firebase/firestore';
+import { db } from "../../firebase/firebase";
 
 
 const ItemListContainer = () => {
@@ -13,7 +14,6 @@ const ItemListContainer = () => {
     
     useEffect(() => {
         setIsLoading(true);
-        const db = getFirestore();
         let itemsCollection = collection(db, 'products');
         if (categoryName) {
             itemsCollection = query(itemsCollection, where("category", "==", categoryName));
