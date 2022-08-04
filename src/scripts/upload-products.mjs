@@ -1,6 +1,7 @@
 import fetch from "node-fetch";
 import { writeBatch, doc, getFirestore, collection } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
+const readonly = true;
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -36,5 +37,6 @@ for(const product of products) {
         stock: 5,
     });
 }
-
-await batch.commit();
+if(!readonly) {
+    await batch.commit();
+}
