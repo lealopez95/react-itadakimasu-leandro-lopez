@@ -40,7 +40,13 @@ const CartProvider = ({ defaultValue, children }) => {
         return cart.findIndex(cartItem => cartItem.id === itemId) !== -1;
     }
 
-    return <Provider value={{cart, addItemToCart, removeItemFromCart, clearCart}}>
+    const calcTotal = () => {
+        return cart.reduce( (acum, item) => {
+            return acum += (item.price * item.qty);
+        }, 0);
+    }
+
+    return <Provider value={{cart, addItemToCart, removeItemFromCart, clearCart, calcTotal}}>
         {children}
     </Provider>
 }

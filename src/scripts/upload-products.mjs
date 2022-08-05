@@ -1,18 +1,15 @@
 import fetch from "node-fetch";
 import { writeBatch, doc, getFirestore, collection } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
-const readonly = true;
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+const readonly = false;
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAXiETGrx4xYnsIUpui10I6zbcu2P0t1Sg",
-  authDomain: "react-tp-e-commerce.firebaseapp.com",
-  projectId: "react-tp-e-commerce",
-  storageBucket: "react-tp-e-commerce.appspot.com",
-  messagingSenderId: "907381526078",
-  appId: "1:907381526078:web:cbe72d49f62d52f41b0b6f"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID
 };
 
 // Initialize Firebase
@@ -22,9 +19,8 @@ export const db = getFirestore();
 
 
 const batch = writeBatch(db);
-let products;
 const response = await fetch('https://fakestoreapi.com/products');
-products = await response.json();
+const products = await response.json();
 
 for(const product of products) {
     const prodRef = doc(collection(db, "products"));

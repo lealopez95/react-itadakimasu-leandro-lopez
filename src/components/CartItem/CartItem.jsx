@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import './CartItem.css'
@@ -19,12 +18,11 @@ const CartItem = ({item, showAsList = false, onDeleteItem}) => {
                 <p className='Cart-Item-text'>${item.price}</p>
                 <p className='Cart-Item-text'>x {item.qty}</p>
                 <button className='Cart-Item-button' onClick={onDeleteHandler}>
-                    <FontAwesomeIcon 
+                    <FontAwesomeIcon
                         icon={faTrashCan}
                         color='black'
                         size='2x' />
                 </button>
-                <Link to={`/item/${item.id}`}>View Details</Link>
             </div>
         </li>
     )
