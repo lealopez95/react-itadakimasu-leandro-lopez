@@ -1,0 +1,12 @@
+.Order-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Order-form-input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

@@ -4,13 +4,13 @@ import OrderForm from '../../components/OrderForm/OrderForm'
 import React from 'react';
 
 
-const CartView = ({items = [], onDeleteItem, calcTotal, handleSubmit}) => {
+const CartView = ({items = [], onDeleteItem, calcTotal, onSubmit}) => {
     const cartIsNotEmpty = items.length !== 0;
 
     const renderCheckoutView = () => {
         return <>
             <CartDetail items={items} onDeleteItem={onDeleteItem} calcTotal={calcTotal} />
-            <OrderForm handleSubmit={handleSubmit} />
+            <OrderForm onSubmit={onSubmit} />
         </>
     }
 

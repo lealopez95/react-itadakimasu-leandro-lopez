@@ -4,6 +4,7 @@ import HeaderContainer from './containers/HeaderContainer/HeaderContainer';
 import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 import CartContainer from './containers/CartContainer/CartContainer';
+import OrdersContainer from './containers/OrdersContainer/OrdersContainer';
 import CartProvider from './context/CartContext';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route exact path='category/:categoryName' element={<ItemListContainer />} />
             <Route exact path='item/:itemId' element={<ItemDetailContainer />} />
             <Route exact path='cart' element={<CartContainer />} />
+            <Route exact path='orders/:orderId' element={<OrdersContainer />} />
             <Route
               path="*"
               element={
