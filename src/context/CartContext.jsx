@@ -16,13 +16,19 @@ const CartProvider = ({ defaultValue, children }) => {
                 }
             ]);
         } else {
-            //todo: generate a context for global error msgs
-            console.log(`Can't duplicate item`);
+            const itemIndex = getItemIndex(item.id);
+            if((cart[itemIndex].qty + qty) <= cart[itemIndex].stock) {
+                const aux = [...cart];
+                aux[itemIndex].qty += qty;
+                setCart(aux);
+            } else {
+                console.log("Cant add item")
+            }
         }
     }
 
     const removeItemFromCart = (itemId) => {
-        const itemIndex = cart.findIndex(cartItem => cartItem.id === itemId);
+        const itemIndex = getItemIndex(itemId);
         if(itemIndex !== -1) {
             const aux = [...cart];
             const [ removedItem ] = aux.splice(itemIndex, 1);
@@ -37,7 +43,7 @@ const CartProvider = ({ defaultValue, children }) => {
     }
 
     const isItemInCart = (itemId) => {
-        return cart.findIndex(cartItem => cartItem.id === itemId) !== -1;
+        return getItemIndex(itemId) !== -1;
     }
 
     const calcTotal = () => {
@@ -45,6 +51,8 @@ const CartProvider = ({ defaultValue, children }) => {
             return acum += (item.price * item.qty);
         }, 0);
     }
+
+    const getItemIndex = itemId => cart.findIndex(cartItem => cartItem.id === itemId);
 
     return <Provider value={{cart, addItemToCart, removeItemFromCart, clearCart, calcTotal}}>
         {children}
