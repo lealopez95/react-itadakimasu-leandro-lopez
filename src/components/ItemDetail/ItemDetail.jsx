@@ -34,8 +34,9 @@ const ItemDetail = ({item, initial = 1}) => {
     }
 
     const onAddToCart = () => {
-        addItemToCart(item, amount);
-        setShouldGoToCart(true);
+        if(addItemToCart(item, amount)) {
+            setShouldGoToCart(true);
+        }
     }
 
     const renderActionButton = () => {

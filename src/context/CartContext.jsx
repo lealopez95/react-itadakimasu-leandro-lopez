@@ -1,10 +1,13 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useContext } from 'react';
+import { AppMessagesContext } from './AppMessagesContext';
 
 export const CartContext = createContext([]);
 const { Provider } = CartContext;
 
+
 const CartProvider = ({ defaultValue, children }) => {
     const [ cart, setCart ] = useState(defaultValue);
+    const { showMessage } = useContext(AppMessagesContext);
 
     const addItemToCart = (item, qty) => {
         if(!isItemInCart(item.id)) {
@@ -22,9 +25,11 @@ const CartProvider = ({ defaultValue, children }) => {
                 aux[itemIndex].qty += qty;
                 setCart(aux);
             } else {
-                console.log("Cant add item")
+                showMessage("Cant add item", 'error')
+                return false;
             }
         }
+        return true;
     }
 
     const removeItemFromCart = (itemId) => {
@@ -32,7 +37,7 @@ const CartProvider = ({ defaultValue, children }) => {
         if(itemIndex !== -1) {
             const aux = [...cart];
             const [ removedItem ] = aux.splice(itemIndex, 1);
-            console.log(`removed "${removedItem.title}" from cart`);
+            showMessage(`removed "${removedItem.title}" from cart`);
             setCart(aux);
             
         }

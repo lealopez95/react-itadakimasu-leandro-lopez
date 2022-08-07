@@ -6,29 +6,32 @@ import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailCont
 import CartContainer from './containers/CartContainer/CartContainer';
 import OrdersContainer from './containers/OrdersContainer/OrdersContainer';
 import CartProvider from './context/CartContext';
+import AppMessagesProvider from './context/AppMessagesContext';
 
 function App() {
   return (
     <BrowserRouter>
       <div className='App'>
-        <CartProvider defaultValue={[]}>
-          <HeaderContainer />
-          <Routes>
-            <Route exact path='/' element={<ItemListContainer />} /> {/* here will go a Home component */}
-            <Route exact path='category/:categoryName' element={<ItemListContainer />} />
-            <Route exact path='item/:itemId' element={<ItemDetailContainer />} />
-            <Route exact path='cart' element={<CartContainer />} />
-            <Route exact path='orders/:orderId' element={<OrdersContainer />} />
-            <Route
-              path="*"
-              element={
-                <main style={{ padding: "1rem" }}>
-                  <p>404 Esta pagina no existe!</p>
-                </main>
-              }
-              />
-          </Routes>
-        </CartProvider>
+        <AppMessagesProvider>
+          <CartProvider defaultValue={[]}>
+            <HeaderContainer />
+            <Routes>
+              <Route exact path='/' element={<ItemListContainer />} /> {/* here will go a Home component */}
+              <Route exact path='category/:categoryName' element={<ItemListContainer />} />
+              <Route exact path='item/:itemId' element={<ItemDetailContainer />} />
+              <Route exact path='cart' element={<CartContainer />} />
+              <Route exact path='orders/:orderId' element={<OrdersContainer />} />
+              <Route
+                path="*"
+                element={
+                  <main style={{ padding: "1rem" }}>
+                    <p>404 Esta pagina no existe!</p>
+                  </main>
+                }
+                />
+            </Routes>
+          </CartProvider>
+        </AppMessagesProvider>
       </div>
     </BrowserRouter>
   );
